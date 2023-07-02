@@ -1,0 +1,37 @@
+.category h3 {
+  margin: 1rem 0;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.category ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;  
+  justify-content: center;
+  gap: .5rem;
+}
+
+.category ul li {
+  width: fit-content;
+  height: auto;
+  display: inline-block;
+  height: fit-content;
+  border-radius: 6px;
+  border: 1px solid #eee;
+  padding: .25rem 1rem;
+  transition: all .3s ease-in-out;
+  text-transform: capitalize;
+}
+
+.category ul li:hover {
+  background-color: #eee;
+  color: #646cff;
+  transform: scale(1.05);
+  border: 1px dashed #646cff;
+}
+.category ul li a {
+  cursor: default;
+}

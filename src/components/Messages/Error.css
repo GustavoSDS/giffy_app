@@ -1,0 +1,31 @@
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: var(--padding-x);
+  width: fit-content;
+  margin: 0 auto;
+  padding: var(--padding-y) var(--padding-x);
+  font-size: 1.5rem;
+  border-radius: var(--border-radius);
+  color: var(--color-error);
+  border: var(--border-error);
+  background-color: var(--bg-error);
+}
+
+.error-spinner {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: var(--border-color-error);
+  border-radius: 50%;
+  animation: spinner 1s linear infinite;
+  position: relative;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}

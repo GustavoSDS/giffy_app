@@ -1,0 +1,95 @@
+form {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 30px;
+}
+
+form>input {
+  height: 42px;
+  min-width: 240px;
+  border-radius: 8px;
+  color: #eee;
+  border: 1px solid transparent;
+  outline: none;
+  padding: 0 10px;
+  transition: all .3 ease-in-out;
+}
+
+form>input::placeholder {
+  color: #eee;
+}
+
+form>input:focus,
+form>input:focus-visible {
+  outline: 1px dashed #646cff;
+}
+
+form>input:hover {
+  border: 1px dashed transparent;
+  outline: 1px dashed #646cff;
+  cursor: pointer;
+}
+
+select {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  border: 1px solid white;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+select {
+  outline: none;
+}
+
+select:hover {
+  border-color: #646cff;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.55em 1em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  border: 1px solid white;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  cursor: pointer;
+  color: #eee;
+  border-color: #646cff;
+}
+
+@media (max-width: 428px) {
+  form {
+    flex-direction: column;
+    row-gap: 10px;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  form input, form button, form select {
+    width: 80%;
+  }
+  button {
+    margin-top: 10px;
+  }
+
+}

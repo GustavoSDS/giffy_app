@@ -1,0 +1,77 @@
+.gif {
+  position: relative;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 6px;
+  transition: all .3s ease-out;
+  overflow: hidden;
+  /* border: 1px solid #eee; */
+  /* grid-template-rows: masonry; */
+}
+
+.gif:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+}
+
+.gif img {
+  object-fit: cover;
+  height: 300px;
+  transition: all .3s ease-in;
+}
+
+.gif:hover img {
+  transform: scale(1.1);
+}
+
+.gif h4 {
+  min-height: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 4px;
+  color: #eee;
+  font-size: 14px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  transition: all .4s ease;
+  text-transform: capitalize;
+  background: linear-gradient(to top, #747bff85 0%, #747bff00 100%);
+}
+.gif:hover h4 {
+  filter: brightness(1);
+  background: linear-gradient(to top, #747bff 0%, #747bffdc 100%);
+}
+
+.gif>img.image-eye {
+  position: absolute;
+  bottom: 10px;
+  right: 4px;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  transition: all .3 ease-in-out;
+}
+
+.gif:hover .image-eye {
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+@media (max-width: 428px) {
+  .gif {
+    width: 250px;
+  }
+
+  .gif img {
+    object-fit: cover;
+    height: 250px;
+  }
+
+}
