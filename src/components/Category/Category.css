@@ -1,0 +1,38 @@
+
+.category h3 {
+  margin: 1rem 0;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.category ul {
+  min-height: 30vh;
+  list-style: none;
+  column-count: 4;
+}
+
+.category ul li {
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  margin-bottom: 10px;
+  width: 100%;
+  display: inline-block;
+  height: fit-content;
+  border-radius: 6px;
+  border: 1px solid #eee;
+  padding: 6px;
+  transition: all .3s ease-in-out;
+  text-transform: capitalize;
+}
+
+.category ul li:hover {
+  background-color: #eee;
+  color: #646cff;
+  transform: scale(1.05);
+  border: 1px dashed #646cff;
+}
+.category ul li a {
+  cursor: default;
+}

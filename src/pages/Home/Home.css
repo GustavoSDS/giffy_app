@@ -1,0 +1,25 @@
+.list-of-gifs {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.list-of-gifs >  * {
+  margin: 0 auto;
+}
+
+.ListOfGifs-button {
+  margin: 2rem 0 1rem;
+}
+.ListOfGifs-button:hover {
+  background-color: white;
+  color: #333;
+}
+
+.recents-search-title {
+  margin: 2rem 0 2.5rem;
+  margin-bottom: 0;
+  font-weight: 400;
+  text-transform: uppercase;
+}
