@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'wouter'
 import './Category.css'
 
-const index = ({ name, options = [] }) => {
+const Category = ({ name, options = [] }) => {
   return (
     <div className='category'>
       <h3>{name}</h3>
@@ -19,4 +19,4 @@ const index = ({ name, options = [] }) => {
   )
 }
 
-export default index
+export default React.memo(Category)

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import getTrendingTerms from "../../services/getTrendingTerms";
-import Category from "../Category";
+import Category from "../Category/Category";
 
-export default function TrendingSearches() {
+const TrendingSearches = () => {
   const [trends, setTrends] = useState([]);
 
   useEffect(() => {
     getTrendingTerms().then(setTrends);
-
   }, []);
 
   return <Category options={trends} name={'tendencias'} />
 }
+export default React.memo(TrendingSearches);

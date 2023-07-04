@@ -1,11 +1,14 @@
-import React from "react";
-import { useLocation } from "wouter"
+import React, { useState } from "react";
+import { useLocation } from "wouter";
+import ButtonSearchGIF from "../Buttons/ButtonSearchGIF";
+import InputSearchGIF from "../Inputs/InputSearchGIF";
+
 
 import "./Nav.css"
-import { useState } from "react";
 
-export const Nav = () => { // eslint-disable-line
-  const [path, pushLocation] = useLocation(); // eslint-disable-line
+export const Nav = () => {
+  // eslint-disable-next-line no-unused-vars
+  const [path, pushLocation] = useLocation();
   const [keyword, setKeyword] = useState('');
   const [category, setCategory] = useState('gifs');
 
@@ -19,11 +22,9 @@ export const Nav = () => { // eslint-disable-line
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={keyword}
-        onChange={(e) => { setKeyword(e.target.value) }}
-        placeholder="Search GIF"
+      <InputSearchGIF
+        keyword={keyword}
+        setKeyword={setKeyword}
       />
       <select
         onChange={(e) => setCategory(e.target.value)}
@@ -34,12 +35,7 @@ export const Nav = () => { // eslint-disable-line
         <option value="stickers">Stickers</option>
       </select>
 
-      <button
-        type="submit"
-        className="search-button"
-      >
-        Search GIF
-      </button>
+      <ButtonSearchGIF />
     </form>
   )
 }

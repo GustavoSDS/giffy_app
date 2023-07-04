@@ -1,12 +1,12 @@
 import React from "react";
 import { Route } from "wouter";
-import { ListOfGifs } from "../../components/ListOfGifs";
-import LazyLoading from '../../components/TrendingSearches'
+import { ListOfGifs } from "../../components/ListOfGifs/ListGifs";
+import LazyLoading from '../../components/TrendingSearches/LazyLoading'
 import useGifs from "../../hooks/useGifs";
 
 import "./Home.css";
 
-const Index = ({ keyword, search }) => {
+const Home = ({ keyword, search }) => {
   const { gifs, setPage } = useGifs({ keyword, search });
 
   const handleNextPage = () => {
@@ -38,4 +38,4 @@ const Index = ({ keyword, search }) => {
   )
 }
 
-export default Index
+export default Home

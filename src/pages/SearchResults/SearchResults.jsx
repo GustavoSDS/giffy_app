@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef } from "react";
-import { ListOfGifs } from "../../components/ListOfGifs";
+import { ListOfGifs } from "../../components/ListOfGifs/ListGifs";
 import { Route } from "wouter";
 import useNearScreen from "../../hooks/useNearScreen";
 import useGifs from "../../hooks/useGifs";

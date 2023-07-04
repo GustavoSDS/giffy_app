@@ -1,14 +1,14 @@
 import React from "react";
-import { Gif } from "../Gif";
+import Gif from "../Gif/Gif";
 import useGifs from "../../hooks/useGifs";
-import { Error } from "../../components/Messages/Error";
-import ThreeDots from "../../components/Loaders/ThreeDots";
+import { Error } from "../Messages/Error";
+import ThreeDots from "../Loaders/ThreeDots";
 
 import "./ListOfGifs.css";
 
-export const ListOfGifs = ({...props}) => {
+export const ListOfGifs = ({ params }) => {
 
-  const { keyword, search } = props.params;
+  const { keyword, search } = params;
   const { gifs, loading } = useGifs({ keyword, search });
 
   if (loading) {
@@ -32,7 +32,7 @@ export const ListOfGifs = ({...props}) => {
             />
           ))}
         </div>
-        
+
       </React.Fragment>
     );
   }

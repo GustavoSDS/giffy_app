@@ -1,11 +1,11 @@
 import React from "react";
-import { Gif } from "../../components/Gif";
+import Gif from "../../components/Gif/Gif";
 import { useGlobalGifs } from "../../hooks/useGlobalGifs"
 
 import "./Detail.css"
 
-const Index = ({ params }) => { /* eslint-disable-line  */
-  const gifs = useGlobalGifs() /* eslint-disable-line */
+const Index = ({ params }) => { 
+  const gifs = useGlobalGifs()
   const gif = gifs.find(gif => gif.id === params.id) || {}
 
   return (
