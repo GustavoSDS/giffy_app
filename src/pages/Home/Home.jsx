@@ -23,7 +23,7 @@ const Home = ({ keyword, search }) => {
           component={ListOfGifs}
         />
       </div>
-      {gifs.length === 0 && localStorage.setItem('lastKeyword', 'random')}
+      {gifs.length === 0 && localStorage.setItem('lastKeyword', 'trending')}
       {gifs.length > 0
         && <button className="ListOfGifs-button" onClick={handleNextPage}>
           View more </button>}
