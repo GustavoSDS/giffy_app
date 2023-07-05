@@ -1,5 +1,4 @@
 .list-of-gifs {
-  min-height: 20vh;
   display: flex;
   align-items: center;
   flex-direction: column;

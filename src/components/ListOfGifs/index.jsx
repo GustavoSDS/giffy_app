@@ -1,5 +1,5 @@
 import React from "react";
-import Gif from "../Gif/Gif";
+import Gif from "../Gif";
 import useGifs from "../../hooks/useGifs";
 import { Error } from "../Messages/Error";
 import ThreeDots from "../Loaders/ThreeDots";

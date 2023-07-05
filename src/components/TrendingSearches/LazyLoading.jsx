@@ -3,7 +3,7 @@ import useNearScreen from '../../hooks/useNearScreen';
 import { Loading } from '../Messages/Loading';
 
 const TrendingSearches = React.lazy(
-  () => import('./TrendingSearches')
+  () => import('.')
 );
 
 const LazyTranding = () => {
@@ -19,4 +19,4 @@ const LazyTranding = () => {
     }
   </div>;
 }
-export default LazyTranding
+export default LazyTranding;

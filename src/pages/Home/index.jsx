@@ -1,6 +1,6 @@
 import React from "react";
 import { Route } from "wouter";
-import { ListOfGifs } from "../../components/ListOfGifs/ListGifs";
+import { ListOfGifs } from "../../components/ListOfGifs";
 import LazyLoading from '../../components/TrendingSearches/LazyLoading'
 
 import "./Home.css";

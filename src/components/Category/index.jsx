@@ -3,6 +3,7 @@ import { Link } from 'wouter'
 import './Category.css'
 
 const Category = ({ name, options = [] }) => {
+
   return (
     <div className='category'>
       <h3>{name}</h3>
@@ -19,4 +20,4 @@ const Category = ({ name, options = [] }) => {
   )
 }
 
-export default React.memo(Category)
+export default Category

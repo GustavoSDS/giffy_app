@@ -3,6 +3,7 @@ import React from 'react'
 import './Loading.css'
 
 export const Loading = () => {
+
   return (
     <p className='loading'>
       <span
@@ -14,3 +15,5 @@ export const Loading = () => {
     </p>
   )
 }
+
+export default React.memo(Loading)

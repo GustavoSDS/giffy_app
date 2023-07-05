@@ -12,7 +12,7 @@
   gap: .5rem;
   column-gap: 1rem;
 }
-@media (min-width: 548px){
+@media (min-width: 480px){
   .category ul {
     grid-template-columns: repeat(2, 1fr);
   }       

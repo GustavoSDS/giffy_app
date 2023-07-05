@@ -5,7 +5,7 @@ import GifContext from "../context/GifContext";
 import { useContext } from "react";
 
 
-function useGifs({ keyword, search = "gifs" }) {
+function useGifs({ keyword, search = "gifs" } = { keyword: null }) {
   const INITIAL_PAGE = 0;
 
   const [loading, setLoading] = useState(false);

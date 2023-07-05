@@ -1,9 +1,9 @@
 .gif {
   position: relative;
-  min-width: 325px;
+  min-width: 200px;
+  height: 200px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
   border-radius: 6px;
   transition: all .4s ease-in-out;
@@ -19,7 +19,7 @@
 .gif video {
   object-fit: cover;
   object-position: center;
-  width: 325px;
+  width: 200px;
   transition: all .3s ease-in-out;
 }
 
@@ -88,13 +88,15 @@
 .gif-detail {
   width: 100%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .title-detail {
   font-size: 1.5rem;
   font-weight: 400;
   text-transform: uppercase;
-  margin: 2rem;
 }
 
 .video-container:hover {
@@ -103,8 +105,8 @@
 
 .video-detail {
   width: 90%;
-  margin: auto;
+  margin: 2rem auto 0;
   height: 550px;
   object-fit: contain;
-  object-position: center;
+  object-position: top;
 }

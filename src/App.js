@@ -1,12 +1,13 @@
 import React from "react";
 import { Route } from "wouter";
-import Home from "./pages/Home/Home";
-import SearchResults from "./pages/SearchResults/SearchResults";
+import Home from "./pages/Home";
+import SearchResults from "./pages/SearchResults";
 import StaticContext from "./context/StaticContext";
 import { GifContextProvider } from "./context/GifContext";
-import { Header } from "./components/Header/Header";
-import Detail from "./pages/Detail/Detail";
-import Logo from "./components/Logo/Logo";
+import { Header } from "./components/Header/";
+import Detail from "./pages/Detail";
+import Logo from "./components/Logo";
+import { Error } from "./components/Messages/Error";
 
 import "./App.css";
 
@@ -28,6 +29,10 @@ function App() {
         <Route
           path="/details/gif/:id"
           component={Detail}
+        />
+        <Route
+          path="/404"
+          component={Error}
         />
         <Route
           path="/:search/:keyword"

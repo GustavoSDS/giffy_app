@@ -3,8 +3,8 @@ import { Link } from 'wouter'
 
 import "./Gif.css";
 
-const GifDeatil = ({ id, title, url }) => {
-
+const GifDeatil = ({ id, title, mp4, url }) => {
+  
   return (
     <div className="gif-detail">
       {
@@ -24,7 +24,7 @@ const GifDeatil = ({ id, title, url }) => {
             className='video-detail'
           >
             <source
-              src={url}
+              src={mp4 || url}
               type="video/mp4"
             />
             Your browser does not support the video tag.
@@ -35,4 +35,4 @@ const GifDeatil = ({ id, title, url }) => {
   )
 }
 
-export default GifDeatil
+export default React.memo(GifDeatil)

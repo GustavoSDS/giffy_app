@@ -3,7 +3,6 @@ import { useLocation } from "wouter";
 import ButtonSearchGIF from "../Buttons/ButtonSearchGIF";
 import InputSearchGIF from "../Inputs/InputSearchGIF";
 
-
 import "./Nav.css"
 
 export const Nav = () => {
@@ -11,7 +10,6 @@ export const Nav = () => {
   const [path, pushLocation] = useLocation();
   const [keyword, setKeyword] = useState('');
   const [category, setCategory] = useState('gifs');
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,3 +39,5 @@ export const Nav = () => {
     </form>
   )
 }
+
+export default React.memo(Nav)

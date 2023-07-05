@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav } from "../Nav/Nav";
+import { Nav } from "../Nav";
 
 import './Header.css'
 
@@ -13,3 +13,6 @@ export const Header = () => {
     </header>
   )
 }
+
+
+export default React.memo(Header);
