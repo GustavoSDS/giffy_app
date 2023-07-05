@@ -8,7 +8,7 @@ const TrendingSearches = () => {
 
   useEffect(() => {
     getTrendingTerms().then(setTrends);
-  }, [setTrends]);
+  }, []);
 
   return <Category options={trends} name={'tendencias'} />
 }

@@ -24,7 +24,7 @@ function useGifs({ keyword, search = "gifs" } = { keyword: null }) {
       localStorage.setItem('lastKeyword', keywordToUse);
       localStorage.setItem('lastSearch', search);
     });
-  }, [keywordToUse, setGifs, search]);
+  }, [keywordToUse, setGifs]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (page === INITIAL_PAGE) return;
@@ -36,7 +36,8 @@ function useGifs({ keyword, search = "gifs" } = { keyword: null }) {
         setLoadingNextPage(false);
       });
 
-  }, [page, keywordToUse, setGifs, search]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [page, keywordToUse, setGifs]);
 
   return { loading, loadingNextPage, gifs, setPage };
 }

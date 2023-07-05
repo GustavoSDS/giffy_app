@@ -30,7 +30,7 @@ export default function useNearScreen({ distance = '100px', externalRef, once = 
     });
 
     return () => observer && observer.disconnect()
-  });
+  }, [externalRef, distance, once]);
 
   return { isNearScreen, elementRef };
 }
