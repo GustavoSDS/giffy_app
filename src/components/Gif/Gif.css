@@ -19,7 +19,7 @@
 .gif video {
   object-fit: cover;
   object-position: center;
-  width: 200px;
+  min-width: 100%;
   transition: all .3s ease-in-out;
 }
 
