@@ -22,7 +22,7 @@ export const ListOfGifs = ({ params }) => {
           keyword && <h2 className="ListOfGifs-title">{decodeURI(keyword.replace(/,/g, " ").toUpperCase())}</h2>
         }
 
-        <div className="App-content ListOfGifs-content">
+        <div className="gifs">
           {gifs.map(({ id, url, title }) => (
             <Gif
               key={url}

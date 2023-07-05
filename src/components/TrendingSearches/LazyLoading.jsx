@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
 import useNearScreen from '../../hooks/useNearScreen';
 import { Loading } from '../Messages/Loading';
-import { List } from 'react-content-loader';
 
 const TrendingSearches = React.lazy(
   () => import('./TrendingSearches')
@@ -16,8 +15,8 @@ const LazyTranding = () => {
         <Suspense fallback={<Loading />}>
           <TrendingSearches />
         </Suspense>
-        : <List />
+        : <Loading />
     }
   </div>;
 }
-export default React.memo(LazyTranding);
+export default LazyTranding

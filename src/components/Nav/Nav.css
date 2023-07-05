@@ -9,6 +9,7 @@ form {
 form>input {
   height: 42px;
   min-width: 240px;
+  width: 50%;
   border-radius: 8px;
   color: #eee;
   border: 1px solid transparent;
@@ -31,7 +32,17 @@ form>input:hover {
   outline: 1px dashed #646cff;
   cursor: pointer;
 }
-
+.options-search {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  justify-content: space-between;
+}
+button,
+select {
+  width: 100%;
+}
 select {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -56,9 +67,6 @@ select:hover {
 button {
   border: none;
   outline: none;
-}
-
-button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.55em 1em;
@@ -77,19 +85,22 @@ button:hover {
   border-color: #646cff;
 }
 
-@media (max-width: 428px) {
+@media (max-width: 585px) {
   form {
     flex-direction: column;
-    row-gap: 10px;
+    row-gap: 20px;
     justify-content: space-between;
     width: 100%;
   }
-
-  form input, form button, form select {
-    width: 80%;
+  form input {
+    width: 100%;
   }
-  button {
-    margin-top: 10px;
+  .options-search {
+    width: 100%;
+  }
+  button,
+  select {
+    width: 50%;
   }
 
 }

@@ -1,14 +1,13 @@
 .gif {
   position: relative;
-  width: 320px;
+  min-width: 325px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   border-radius: 6px;
-  transition: all .3s ease-out;
+  transition: all .4s ease-in-out;
   overflow: hidden;
-  /* border: 1px solid #eee; */
   /* grid-template-rows: masonry; */
 }
 
@@ -17,17 +16,18 @@
   transform: scale(1.01);
 }
 
-.gif img {
+.gif video {
   object-fit: cover;
-  height: 300px;
-  transition: all .3s ease-in;
+  object-position: center;
+  width: 325px;
+  transition: all .3s ease-in-out;
 }
 
-.gif:hover img {
-  transform: scale(1.1);
+.gif:hover video {
+  transform: scale(1.2);
 }
 
-.gif h4 {
+.gif p {
   min-height: 50px;
   position: absolute;
   bottom: 0;
@@ -44,24 +44,33 @@
   text-transform: capitalize;
   background: linear-gradient(to top, #747bff85 0%, #747bff00 100%);
 }
-.gif:hover h4 {
+
+.gif:hover p {
   filter: brightness(1);
   background: linear-gradient(to top, #747bff 0%, #747bffdc 100%);
 }
 
-.gif>img.image-eye {
+.gif>.icon-open {
+  display: none;
   position: absolute;
   bottom: 10px;
   right: 4px;
   z-index: 2;
   width: 32px;
   height: 32px;
-  transition: all .3 ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
-.gif:hover .image-eye {
-  background-color: #eee;
-  border-radius: 50%;
+.gif:hover .icon-open {
+  display: block;
+}
+.icon-open path{
+  transition: all .3s ease-in-out;
+}
+.icon-open:hover path{
+  stroke: white;
+  transform: scale(1.05);
+  fill: rgb(180, 61, 14);
 }
 
 @media (max-width: 428px) {
@@ -69,9 +78,33 @@
     width: 250px;
   }
 
-  .gif img {
+  .gif video {
     object-fit: cover;
     height: 250px;
   }
 
+}
+
+.gif-detail {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.title-detail {
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 2rem;
+}
+
+.video-container:hover {
+  cursor: pointer;
+}
+
+.video-detail {
+  width: 90%;
+  margin: auto;
+  height: 550px;
+  object-fit: contain;
+  object-position: center;
 }

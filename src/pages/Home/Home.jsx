@@ -2,38 +2,31 @@ import React from "react";
 import { Route } from "wouter";
 import { ListOfGifs } from "../../components/ListOfGifs/ListGifs";
 import LazyLoading from '../../components/TrendingSearches/LazyLoading'
-import useGifs from "../../hooks/useGifs";
 
 import "./Home.css";
+import ButtonViewMore from "../../components/Buttons/ButtonViewMore";
 
 const Home = ({ keyword, search }) => {
-  const { gifs, setPage } = useGifs({ keyword, search });
 
-  const handleNextPage = () => {
-    setPage(prevPage => prevPage + 1);
-  }
 
   return (
     <React.Fragment>
-
       <h2 className="recents-search-title">recents search</h2>
-      <div className="list-of-gifs">
+      <div
+        style={{minHeight: '55vh'}}  
+      >
         <Route
           path="/"
           component={ListOfGifs}
         />
       </div>
-      {gifs.length === 0 && localStorage.setItem('lastKeyword', 'trending')}
-      {gifs.length > 0
-        && <button className="ListOfGifs-button" onClick={handleNextPage}>
-          View more </button>}
 
-      <div className="trending-searches">
-        <Route
-          path="/"
-          component={LazyLoading}
-        />
-      </div>
+      <ButtonViewMore keyword={keyword} search={search} />
+
+      <Route
+        path="/"
+        component={LazyLoading}
+      />
     </React.Fragment>
   )
 }

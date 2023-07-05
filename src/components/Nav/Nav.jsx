@@ -26,16 +26,18 @@ export const Nav = () => {
         keyword={keyword}
         setKeyword={setKeyword}
       />
-      <select
-        onChange={(e) => setCategory(e.target.value)}
-        name="category"
-        id="category"
-      >
-        <option value="gifs">Gifs</option>
-        <option value="stickers">Stickers</option>
-      </select>
+      <div className="options-search">
+        <select
+          onChange={(e) => setCategory(e.target.value)}
+          name="category"
+          id="category"
+        >
+          <option value="gifs">Gifs</option>
+          <option value="stickers">Stickers</option>
+        </select>
 
-      <ButtonSearchGIF />
+        <ButtonSearchGIF />
+      </div>
     </form>
   )
 }

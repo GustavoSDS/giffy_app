@@ -10,7 +10,6 @@ export const Loading = () => {
         role="img"
         aria-labelledby="icon"
       />
-
       Loading, please wait...
     </p>
   )

@@ -7,24 +7,22 @@ import { useContext } from "react";
 
 function useGifs({ keyword, search = "gifs" }) {
   const INITIAL_PAGE = 0;
-  
+
   const [loading, setLoading] = useState(false);
   const [loadingNextPage, setLoadingNextPage] = useState(false);
   const { gifs, setGifs } = useContext(GifContext);
   const [page, setPage] = useState(INITIAL_PAGE);
-  const keywordToUse = keyword || localStorage.getItem('lastKeyword') || "random"; 
+  const keywordToUse = keyword || localStorage.getItem('lastKeyword') || "trending";
 
   useEffect(() => {
     setLoading(true);
 
     getGifs({ keyword: keywordToUse, limit: 12, type: search }).then((gifs) => {
-      setTimeout(() => {
-        setGifs(gifs)
-        setLoading(false);
+      setGifs(gifs)
+      setLoading(false);
 
-        localStorage.setItem('lastKeyword', keywordToUse);
-        localStorage.setItem('lastSearch', search);
-      }, 350)
+      localStorage.setItem('lastKeyword', keywordToUse);
+      localStorage.setItem('lastSearch', search);
     });
   }, [keywordToUse, setGifs, search]);
 

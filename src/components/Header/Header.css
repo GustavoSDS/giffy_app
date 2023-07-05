@@ -1,6 +1,11 @@
+header {
+  padding: 0 2%;
+}
+
 hr {
+  width: 100%;
   border: none;
-  border-bottom: 1px solid #eee;
-  margin: 30px 38px;
+  border-bottom: 2px dashed #eee;
+  margin-top: 2rem;
 }
 

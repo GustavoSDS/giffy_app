@@ -17,7 +17,7 @@ export async function fetchGifs(url) {
     const gifs = data.map(img => ({
       id: img.id,
       title: img.title,
-      url: img.images.downsized_medium.url,
+      url: img.images.fixed_height.mp4,
     }));
     return gifs;
 
