@@ -1,7 +1,8 @@
 .gif {
   position: relative;
-  min-width: 200px;
-  height: 200px;
+  min-width: 100px;
+  width: 190px;
+  height: 220px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -54,7 +55,7 @@
   display: none;
   position: absolute;
   bottom: 10px;
-  right: 4px;
+  right: 0px;
   z-index: 2;
   width: 32px;
   height: 32px;
@@ -73,14 +74,14 @@
   fill: rgb(180, 61, 14);
 }
 
-@media (max-width: 428px) {
+@media (max-width: 448px) {
   .gif {
-    width: 250px;
+    margin: 0 auto;
+    width: 90%;
+    height: 60%;
   }
-
-  .gif video {
-    object-fit: cover;
-    height: 250px;
+  .gif>.icon-open {
+    right: 20px;
   }
 
 }

@@ -7,7 +7,6 @@ import ThreeDots from "../Loaders/ThreeDots";
 import "./ListOfGifs.css";
 
 export const ListOfGifs = ({ params }) => {
-
   const { keyword, search } = params;
   const { gifs, loading } = useGifs({ keyword, search });
 

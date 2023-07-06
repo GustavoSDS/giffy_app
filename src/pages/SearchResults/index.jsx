@@ -4,7 +4,8 @@ import { Route } from "wouter";
 import useNearScreen from "../../hooks/useNearScreen";
 import useGifs from "../../hooks/useGifs";
 import { throttle } from 'throttle-debounce';
-import useTitle from "../../hooks/useSEO";
+import { Helmet } from "react-helmet";
+
 
 const Index = ({ params }) => {
   const { keyword, search } = params;
@@ -14,14 +15,12 @@ const Index = ({ params }) => {
     externalRef: loading ? null : externalRef,
     once: false
   });
-  const typeSearch = search.charAt(0).toUpperCase() + search.slice(1);
+  
   const title = gifs
-    ? `${gifs.length} ${typeSearch} - ${keyword}`
+    ? `${gifs.length} ${search} of ${keyword} found`
     : loading
-      ? `Cargando ${typeSearch} - ${keyword}`
-      : '';
-
-  useTitle({ title })
+      ? `Cargando ${search} - ${keyword}`
+      : 'gifs no encontrados';
 
   const debounceNextPage = useCallback( // eslint-disable-line
     throttle(300, () => setPage(page => page + 1))
@@ -33,6 +32,11 @@ const Index = ({ params }) => {
 
   return (
     <React.Fragment>
+      <Helmet>
+        <title>{title} | GIFAY</title>
+        <meta name="description" content={title} />
+      </Helmet>
+
       <div className="App-content">
         <Route
           path="/:search/:keyword"

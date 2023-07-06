@@ -3,7 +3,7 @@ import useSingleGif from "../../hooks/useSingleGif"
 import GifDeatil from "../../components/Gif/GifDeatil";
 import ThreeDots from "../../components/Loaders/ThreeDots";
 import { Redirect } from "wouter";
-import useTitle from "../../hooks/useSEO";
+import { Helmet } from "react-helmet";
 
 import "./Detail.css"
 
@@ -12,17 +12,27 @@ const Index = ({ params }) => {
   const { gif, isLoading, isError } = useSingleGif({ id })
 
   const title = gif ? `${gif.title}` : ''
-  useTitle({description: `Description of ${title}`, title})
+  // useTitle({description: `Description of ${title}`, title})
 
-  if (isLoading) return <ThreeDots />
-  if (isError) return <Redirect to="/404"/>
+  if (isLoading) return (
+    <>
+      <Helmet>
+        <title>Cargando...</title>
+      </Helmet>
+      <ThreeDots />
+    </>
+  )
+  if (isError) return <Redirect to="/404" />
   if (!gif) return null;
 
   return (
     <div className="App-content--detail">
-      <GifDeatil
-        {...gif}
-      />
+      <Helmet>
+        <title>{title} | GIFAY</title>
+        <meta name="description" content={`Description of ${title}`} />
+      </Helmet>
+
+      <GifDeatil {...gif} />
     </div>
   )
 }
