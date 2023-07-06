@@ -18,6 +18,8 @@ const Index = ({ params }) => {
     <>
       <Helmet>
         <title>Cargando...</title>
+        <meta name="description" content={`Description of ${title}`} />
+        <link rel="canonical" href="https://gifay-gsds.vercel.app/details/" />
       </Helmet>
       <ThreeDots />
     </>

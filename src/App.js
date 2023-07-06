@@ -13,6 +13,7 @@ import "./App.css";
 
 function App() {
   return (
+
     <StaticContext.Provider value={{
       nameGif: 'default',
       type: 'gifs',

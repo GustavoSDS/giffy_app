@@ -35,6 +35,7 @@ const Index = ({ params }) => {
       <Helmet>
         <title>{title} | GIFAY</title>
         <meta name="description" content={title} />
+        <link rel="canonical" href="https://gifay-gsds.vercel.app/gifs/avengers" />
       </Helmet>
 
       <div className="App-content">

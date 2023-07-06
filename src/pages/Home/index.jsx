@@ -14,6 +14,7 @@ const Home = ({ keyword, search }) => {
        <Helmet>
          <title>HOME | GIFAY</title>
          <meta name="description" content="Page of Gifs code by for Gustavo Dos Santos" />
+        <link rel="canonical" href="https://gifay-gsds.vercel.app" />
        </Helmet>
 
       <h2 className="recents-search-title">recents search</h2>
