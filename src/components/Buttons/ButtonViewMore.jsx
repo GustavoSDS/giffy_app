@@ -8,7 +8,7 @@ const ButtonViewMore = ({ keyword, search }) => {
     setPage(prevPage => prevPage + 1);
   }
 
-  if (gifs.length > 0) {
+  if (gifs) {
     return (
       <button
         style={ { width: '150px' } }
@@ -17,8 +17,6 @@ const ButtonViewMore = ({ keyword, search }) => {
         View more
       </button>
     )
-  } else if (gifs.length === 0) {
-    localStorage.setItem('lastKeyword', 'trending');
   }
 }
 

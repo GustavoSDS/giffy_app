@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef } from "react";
-import { ListOfGifs } from "../../components/ListOfGifs";
+import ListOfGifs from "../../components/ListOfGifs";
 import { Route } from "wouter";
 import useNearScreen from "../../hooks/useNearScreen";
 import useGifs from "../../hooks/useGifs";
@@ -8,18 +8,18 @@ import { Helmet } from "react-helmet";
 
 
 const Index = ({ params }) => {
-  const { keyword, search } = params;
-  const { loading, gifs, setPage } = useGifs({ keyword, search });
+  const { keyword, type, rating = 'g' } = params;
+  const { loading, gifs, setPage } = useGifs({ keyword, type, rating });
   const externalRef = useRef();
   const { isNearScreen } = useNearScreen({
     externalRef: loading ? null : externalRef,
     once: false
   });
-  
+
   const title = gifs
-    ? `${gifs.length} ${search} of ${keyword} found`
+    ? `${gifs.length} ${type} of ${keyword} found`
     : loading
-      ? `Cargando ${search} - ${keyword}`
+      ? `Cargando ${type} - ${keyword}`
       : 'gifs no encontrados';
 
   const debounceNextPage = useCallback( // eslint-disable-line
@@ -38,9 +38,12 @@ const Index = ({ params }) => {
         <link rel="canonical" href="https://gifay-gsds.vercel.app/gifs/avengers" />
       </Helmet>
 
-      <div className="App-content">
+      <div
+        className="App-content"
+        style={{ minHeight: '100vh' }}
+      >
         <Route
-          path="/:search/:keyword"
+          path="/:type/:keyword/:rating?"
           component={ListOfGifs}
         />
       </div>

@@ -6,9 +6,9 @@ const ButtonSearchGIF = () => {
       type="submit"
       className="search-button"
     >
-      Search GIF
+      Search
     </button>
   )
 }
 
-export default ButtonSearchGIF;
+export default React.memo(ButtonSearchGIF);

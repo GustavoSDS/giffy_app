@@ -11,7 +11,7 @@ const Category = ({ name, options = [] }) => {
         {
           options.map(option => (
             <li key={option}>
-              <Link to={`/gifs/${option}`}>{option}</Link>
+              <Link to={`/gifs/${option}/g`}>{option}</Link>
             </li>
           ))
         }

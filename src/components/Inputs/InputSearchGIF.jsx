@@ -1,14 +1,14 @@
 import React from 'react'
 
-const InputSearchGIF = ({keyword, setKeyword}) => {
+const InputSearchGIF = ({keyword, dispatch}) => {
   return (
     <input
       type="text"
       value={keyword}
-      onChange={(e) => { setKeyword(e.target.value) }}
+      onChange={(e) => { dispatch({type: 'SET_KEYWORD', payload: e.target.value})}}
       placeholder="Search GIF"
     />
   )
 }
 
-export default InputSearchGIF
+export default React.memo(InputSearchGIF)

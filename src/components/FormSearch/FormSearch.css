@@ -13,6 +13,7 @@ form>input {
   border-radius: 8px;
   color: #eee;
   border: 1px solid transparent;
+  background-color: #282c34;
   outline: none;
   padding: 0 10px;
   transition: all .3 ease-in-out;
@@ -32,17 +33,20 @@ form>input:hover {
   outline: 1px dashed #646cff;
   cursor: pointer;
 }
+
 .options-search {
   width: 50%;
   display: flex;
   align-items: center;
-  column-gap: 20px;
+  column-gap: 5px;
   justify-content: space-between;
 }
+
 button,
 select {
   width: 100%;
 }
+
 select {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -92,12 +96,15 @@ button:hover {
     justify-content: space-between;
     width: 100%;
   }
+
   form input {
     width: 100%;
   }
+
   .options-search {
     width: 100%;
   }
+
   button,
   select {
     width: 50%;

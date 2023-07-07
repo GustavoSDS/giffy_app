@@ -19,4 +19,4 @@ const LazyTranding = () => {
     }
   </div>;
 }
-export default LazyTranding;
+export default React.memo(LazyTranding);

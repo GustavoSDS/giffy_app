@@ -6,34 +6,37 @@ import ThreeDots from "../Loaders/ThreeDots";
 
 import "./ListOfGifs.css";
 
-export const ListOfGifs = ({ params }) => {
-  const { keyword, search } = params;
-  const { gifs, loading } = useGifs({ keyword, search });
+const ListOfGifs = ({ params }) => {
+  const { keyword, type, rating } = params;
+  const { gifs, loading } = useGifs({ keyword, type, rating });
 
   if (loading) {
     return <ThreeDots />;
-  } else if (gifs.length === 0) {
+  } else if (!gifs) {
     return <Error />;
-  } else {
-    return (
-      <React.Fragment>
-        {
-          keyword && <h2 className="ListOfGifs-title">{decodeURI(keyword.replace(/,/g, " ").toUpperCase())}</h2>
-        }
-
-        <div className="gifs">
-          {gifs.map(({ id, url, title }) => (
-            <Gif
-              key={url}
-              id={id}
-              url={url}
-              title={title}
-            />
-          ))}
-        </div>
-
-      </React.Fragment>
-    );
   }
+  return (
+    <React.Fragment>
+      {
+        keyword && <h2 className="ListOfGifs-title">{decodeURI(keyword.replace(/,/g, " ").toUpperCase())}</h2>
+      }
+
+      <div className="gifs">
+        {gifs.map(({ id, url, title }) => (
+          <Gif
+            key={url}
+            id={id}
+            url={url}
+            title={title}
+            rating={rating}
+            type={type}
+          />
+        ))}
+      </div>
+
+    </React.Fragment>
+  );
+
 }
 
+export default React.memo(ListOfGifs);

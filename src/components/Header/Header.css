@@ -1,11 +1,31 @@
 header {
-  padding: 0 2%;
+  width: 100%;
+  padding: 0 1rem 2rem;
+  background-color: #242424;
+  box-shadow: 1px 5px 30px -15px #3f383e;
 }
 
-hr {
-  width: 100%;
-  border: none;
-  border-bottom: 2px dashed #eee;
-  margin: 2rem auto;
+.title {
+  width: fit-content;
+  font-weight: 800;
+  color: #eee;
+}
+
+.title:hover {
+  cursor: pointer;
+  color: #535bf2;
+}
+
+.logo-container {
+  max-width: fit-content;
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+  margin: auto;
+}
+
+.logo-container .logo {
+  width: 32px;
+  height: 32px;
 }
 

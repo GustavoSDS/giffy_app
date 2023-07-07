@@ -6,7 +6,6 @@ import StaticContext from "./context/StaticContext";
 import { GifContextProvider } from "./context/GifContext";
 import { Header } from "./components/Header/";
 import Detail from "./pages/Detail";
-import Logo from "./components/Logo";
 import { Error } from "./components/Messages/Error";
 
 import "./App.css";
@@ -19,7 +18,6 @@ function App() {
       type: 'gifs',
     }}>
 
-      <Logo />
       <Header />
 
       <GifContextProvider>
@@ -28,16 +26,16 @@ function App() {
           component={Home}
         />
         <Route
-          path="/details/gif/:id"
+          path="/:type/:keyword/:rating"
+          component={SearchResults}
+        />
+        <Route
+          path="/details/:id"
           component={Detail}
         />
         <Route
           path="/404"
           component={Error}
-        />
-        <Route
-          path="/:search/:keyword"
-          component={SearchResults}
         />
 
       </GifContextProvider>

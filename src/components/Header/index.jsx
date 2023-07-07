@@ -1,15 +1,17 @@
 import React from "react";
-import { Nav } from "../Nav";
+import { FormSearch } from "../FormSearch";
+import Logo from "../../components/Logo";
 
 import './Header.css'
-
 
 export const Header = () => {
 
   return (
     <header>
-      <Nav />      
-      <hr />
+      <Logo />
+
+      <FormSearch />
+      
     </header>
   )
 }

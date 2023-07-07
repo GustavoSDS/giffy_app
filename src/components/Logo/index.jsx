@@ -5,8 +5,8 @@ import logo from '../../assets/logo.svg';
 const Logo = () => {
   return (
     <Link className="logo-container" to="/">
-      <img src={logo} alt="logo" />
-      <h1 className="logo">GIFAY IS COOL</h1>
+      <img className="logo" src={logo} alt="logo" />
+      <h1 className="title">GIFAY IS COOL</h1>
     </Link>
   )
 }

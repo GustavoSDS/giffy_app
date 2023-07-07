@@ -3,8 +3,8 @@ import { Link } from 'wouter'
 
 import "./Gif.css";
 
-const GifDeatil = ({ id, title, mp4, url }) => {
-  
+const GifDeatil = ({gif, type="gifs", rating="g" }) => {
+  const { title, id, mp4, url } = gif;
   return (
     <div className="gif-detail">
       {
@@ -13,7 +13,7 @@ const GifDeatil = ({ id, title, mp4, url }) => {
           : null
       }
 
-      <Link to={`/gifs/${title?.split(" ")}`} key={id}>
+      <Link to={`/${type}/${title?.split(" ")}/${rating}`} key={id}>
         <div className="video-container">
           <video
             width={300}

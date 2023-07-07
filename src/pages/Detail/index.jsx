@@ -8,11 +8,10 @@ import { Helmet } from "react-helmet";
 import "./Detail.css"
 
 const Index = ({ params }) => {
-  const { id } = params;
+  const { id, rating, type } = params;
   const { gif, isLoading, isError } = useSingleGif({ id })
 
   const title = gif ? `${gif.title}` : ''
-  // useTitle({description: `Description of ${title}`, title})
 
   if (isLoading) return (
     <>
@@ -34,7 +33,7 @@ const Index = ({ params }) => {
         <meta name="description" content={`Description of ${title}`} />
       </Helmet>
 
-      <GifDeatil {...gif} />
+      <GifDeatil gif={gif} rating={rating} type={type} />
     </div>
   )
 }
